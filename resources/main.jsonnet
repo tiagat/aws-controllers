@@ -1,5 +1,5 @@
-local application = 'poc-ack';
-local environment = std.extVar("environment");
+local application = "poc-ack";
+local environment = "test";
 
 {
     'sns-topic.yaml': std.manifestYamlDoc({
