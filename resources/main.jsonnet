@@ -8,6 +8,6 @@ local snsTopic = import 'templates/sns-topic.libsonnet';
 
 [
   iamPolicy,
-  iamRole,
+//   iamRole,
   snsTopic
 ]
