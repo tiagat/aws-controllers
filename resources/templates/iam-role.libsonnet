@@ -29,7 +29,7 @@ local iamPolicyJson = std.toString({
     assumeRolePolicyDocument: iamPolicyJson,
     policies: [
         'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
-        'arn:aws:iam::343315438995:policy/' + iamPolicy.metadata.name,
+        'arn:aws:iam::' + awsAccountId + ':policy/' + iamPolicy.metadata.name,
     ],
     policyRefs: [],
   },
