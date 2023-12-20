@@ -1,0 +1,22 @@
+apiVersion: iam.services.k8s.aws/v1alpha1
+kind: Role
+metadata:
+  name: poc-ack-test-role
+spec:
+  name: poc-ack-test-role
+  tags:
+  - key: environment
+    value: development
+  assumeRolePolicyDocument: |
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+            "Action": [
+                "firehose:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+      ]
+    }
