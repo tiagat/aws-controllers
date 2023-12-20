@@ -4,6 +4,7 @@ metadata:
   name: poc-ack-test
 spec:
   name: poc-ack-test
+  displayName: poc-ack-test
   tags:
   - key: environment
     value: development
