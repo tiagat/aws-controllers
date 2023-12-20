@@ -22,10 +22,10 @@ local iamPolicyJson = std.toString({
   apiVersion: 'iam.services.k8s.aws/v1alpha1',
   kind: 'Role',
   metadata: {
-    name: 'poc-ack-role',
+    name: iamRoleName,
   },
   spec: {
-    name: 'poc-ack-role',
+    name: iamRoleName,
     assumeRolePolicyDocument: iamPolicyJson,
     policies: [
         'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
