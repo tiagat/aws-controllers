@@ -14,6 +14,13 @@ spec:
     path: resources
     repoURL: https://github.com/tiagat/aws-controllers
     targetRevision: main
+    directory:
+      jsonnet:
+        extVars:
+          - name: accountId
+            value: 343315438995
+          - name: environment
+            value: test
   syncPolicy:
     automated:
       selfHeal: true
