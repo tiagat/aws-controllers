@@ -1,4 +1,4 @@
 resources:
   - controllers/ack-iam-controller.yaml
   - controllers/ack-sns-controller.yaml
-  - controllers/poc-application.yaml
+  # - controllers/poc-application.yaml
