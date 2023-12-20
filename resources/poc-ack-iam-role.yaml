@@ -37,22 +37,16 @@ spec:
   tags:
   - key: environment
     value: development
-  # assumeRolePolicyDocument: |
-  #   {
-  #     "Version": "2012-10-17",
-  #     "Statement": [
-  #       {
-  #         "Effect": "Allow",
-  #         "Action": [
-  #           "logs:CreateLogGroup",
-  #           "logs:CreateLogStream",
-  #           "logs:PutLogEvents",
-  #           "logs:PutMetricFilter",
-  #           "logs:PutRetentionPolicy"
-  #         ],
-  #         "Resource": [
-  #           "*"
-  #         ]
-  #       }
-  #     ]
-  #   }
+  assumeRolePolicyDocument: |
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": "sns.amazonaws.com"
+                },
+                "Action": "sts:AssumeRole"
+            }
+        ]
+    }
