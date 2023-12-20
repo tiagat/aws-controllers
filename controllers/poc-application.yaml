@@ -17,8 +17,10 @@ spec:
     directory:
       jsonnet:
         extVars:
-          - name: accountId
+          - name: awsAccountId
             value: "343315438995"
+          - name: awsRegion
+            value: "us-east-1"
           - name: environment
             value: test
   syncPolicy:

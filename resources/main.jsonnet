@@ -1,19 +1,23 @@
 local application = 'poc-ack';
 
 local environment = std.extVar('environment');
-local accountId = std.extVar('accountId');
+local awsAccountId = std.extVar('awsAccountId');
+local awsRegion =  std.extVar('awsRegion');
 
+local iamPolicyName = application + '-' + environment + "-policy";
+local iamRoleName = application + '-' + environment + "-role";
 local snsTopicName = 'topic-' + application + '-' + environment;
 
 [
   {
+
     apiVersion: 'iam.services.k8s.aws/v1alpha1',
     kind: 'Policy',
     metadata: {
-      name: 'poc-ack-policy',
+      name: iamPolicyName,
     },
     spec: {
-      name: 'poc-ack-policy',
+      name: iamPolicyName,
       policyDocument: {
         Version: '2012-10-17',
         Statement: [
@@ -23,7 +27,7 @@ local snsTopicName = 'topic-' + application + '-' + environment;
               'sns:Publish',
               'sns:Subscribe',
             ],
-            Resource: 'arn:aws:sns:us-east-1:343315438995:*',
+            Resource: "arn:aws:sns:" + awsRegion + ":" + awsAccountId + ":*",
           },
           {
             Effect: 'Allow',
@@ -46,7 +50,7 @@ local snsTopicName = 'topic-' + application + '-' + environment;
       name: snsTopicName,
     },
     spec: {
-      name: snsTopicName,
+      name: self.metadata,
       displayName: snsTopicName,
       tags: [
         {
@@ -57,4 +61,5 @@ local snsTopicName = 'topic-' + application + '-' + environment;
     },
 
   },
+
 ]
