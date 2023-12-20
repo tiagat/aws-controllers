@@ -1,9 +1,7 @@
 resources:
-  
   # controllers
   - controllers/ack-iam-controller.yaml
   - controllers/ack-sns-controller.yaml
-
   # resources
   - resources/poc-ack-iam-user.yaml
   - resources/poc-ack-sns-topic.yaml
