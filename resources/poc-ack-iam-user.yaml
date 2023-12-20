@@ -1,0 +1,6 @@
+apiVersion: iam.services.k8s.aws/v1alpha1
+kind: User
+metadata:
+  name: poc-ack-test
+spec:
+  name: poc-ack-test

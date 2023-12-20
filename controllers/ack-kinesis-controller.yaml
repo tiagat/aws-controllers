@@ -18,12 +18,12 @@ spec:
       parameters:
         - name: aws.region
           value: us-east-1
-        - name: aws.credentials.secretName
-          value: aws-credentials
-        - name: aws.credentials.secretKey
-          value: credentials
-        - name: aws.credentials.profile
-          value: default
+        # - name: aws.credentials.secretName
+        #   value: aws-credentials
+        # - name: aws.credentials.secretKey
+        #   value: credentials
+        # - name: aws.credentials.profile
+        #   value: default
   syncPolicy:
     automated:
       prune: true
