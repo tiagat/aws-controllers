@@ -2,7 +2,6 @@ resources:
   
   # controllers
   - controllers/ack-iam-controller.yaml
-  - controllers/ack-kinesis-controller.yaml
   - controllers/ack-sns-controller.yaml
 
   # resources
