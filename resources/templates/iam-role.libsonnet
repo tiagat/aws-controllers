@@ -24,6 +24,12 @@ local iamPolicyJson = std.toString({
   },
   spec: {
     name: 'poc-ack-role',
+    assumeRolePolicyDocument: iamPolicyJson,
+    policies: [
+        'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
+        'arn:aws:iam::343315438995:policy/poc-ack-policy',
+    ],
+    policyRefs: null,
   },
   tags: [
     {
@@ -31,10 +37,4 @@ local iamPolicyJson = std.toString({
       value: environment,
     },
   ],
-  assumeRolePolicyDocument: iamPolicyJson,
-  policies: [
-    'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
-    'arn:aws:iam::343315438995:policy/poc-ack-policy',
-  ],
-  policyRefs: null,
 }
