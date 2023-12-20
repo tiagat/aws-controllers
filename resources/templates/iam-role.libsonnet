@@ -18,7 +18,7 @@ local iamRoleName = 'poc-ack-' + environment + '-role';
       value: environment,
     },
   ],
-  assumeRolePolicyDocument: std.toString({
+  assumeRolePolicyDocument: {
     Version: '2012-10-17',
     Statement: [
       {
@@ -29,7 +29,7 @@ local iamRoleName = 'poc-ack-' + environment + '-role';
         Action: 'sts:AssumeRole',
       },
     ],
-  }),
+  },
   policies: [
     'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
     'arn:aws:iam::343315438995:policy/poc-ack-policy',
