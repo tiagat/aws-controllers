@@ -1,6 +1,8 @@
 local environment = std.extVar('environment');
 local awsAccountId = std.extVar('awsAccountId');
 
+local iamPolicy = import 'templates/iam-policy.libsonnet';
+
 local iamRoleName = 'poc-ack-' + environment + '-role';
 
 local iamPolicyJson = std.toString({
@@ -27,7 +29,7 @@ local iamPolicyJson = std.toString({
     assumeRolePolicyDocument: iamPolicyJson,
     policies: [
         'arn:aws:iam::aws:policy/service-role/AmazonSNSRole',
-        'arn:aws:iam::343315438995:policy/poc-ack-policy',
+        'arn:aws:iam::343315438995:policy/' + iamPolicy.metadata.name,
     ],
     policyRefs: null,
   },
