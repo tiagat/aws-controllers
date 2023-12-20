@@ -50,7 +50,7 @@ local snsTopicName = 'topic-' + application + '-' + environment;
       name: snsTopicName,
     },
     spec: {
-      name: self.metadata,
+      name: snsTopicName,
       displayName: snsTopicName,
       tags: [
         {
