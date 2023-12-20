@@ -4,3 +4,40 @@ metadata:
   name: poc-ack-test
 spec:
   name: poc-ack-test
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: poc-user-details
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: export-poc-ack-test-credentials
+spec:  
+  to:
+    name: poc-user-details
+    kind: configmap
+    key: arn
+  from:
+    path: ".status.ackResourceMetadata.arn"
+    resource:
+      group: iam.services.k8s.aws
+      kind: User
+      name: poc-ack-test
+---
+apiVersion: services.k8s.aws/v1alpha1
+kind: FieldExport
+metadata:
+  name: export-poc-ack-test-credentials
+spec:  
+  to:
+    name: poc-user-details
+    kind: configmap
+    key: ownerAccountID
+  from:
+    path: ".status.ackResourceMetadata.ownerAccountID"
+    resource:
+      group: iam.services.k8s.aws
+      kind: User
+      name: poc-ack-test
