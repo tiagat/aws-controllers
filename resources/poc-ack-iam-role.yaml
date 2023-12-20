@@ -50,6 +50,6 @@ spec:
             }
         ]
     }
-  policyRefs:
-    - from:
-        name: poc-ack-policy
+  policies:
+    - arn:aws:iam::aws:policy/service-role/AmazonSNSRole
+
