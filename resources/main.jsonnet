@@ -4,10 +4,10 @@ local environment = std.extVar('environment');
 local awsAccountId = std.extVar('awsAccountId');
 local awsRegion = std.extVar('awsRegion');
 
-local iamPolicyName = application + '-' + environment + '-policy';
+
 local iamRoleName = application + '-' + environment + '-role';
 
-
+local iamPolicy = import 'templates/iam-policy.libsonnet';
 local snsTopic = import 'templates/sns-topic.libsonnet';
 
 local iamPolicyJson = std.toString({
@@ -33,20 +33,7 @@ local iamPolicyJson = std.toString({
   ],
 });
 
-local iamPolicy = {
-  apiVersion: 'iam.services.k8s.aws/v1alpha1',
-  kind: 'Policy',
-  metadata: {
-    name: iamPolicyName,
-  },
-  spec: {
-    name: iamPolicyName,
-    policyDocument: iamPolicyJson,
-  },
-};
-
 [
   iamPolicy,
   snsTopic
-
 ]
