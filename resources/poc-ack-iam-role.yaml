@@ -52,4 +52,4 @@ spec:
     }
   policyRefs:
     - from:
-      name: poc-ack-policy
+        name: poc-ack-policy
