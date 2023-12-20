@@ -16,7 +16,8 @@ metadata:
 spec:
   protocol: firehose
   endpoint: arn:aws:firehose:us-east-1:343315438995:deliverystream/KDS-S3-HQDIM
-  topicRef:
-    name: poc-ack-test
+  topicARN: arn:aws:sns:us-east-1:343315438995:poc-ack-test
   subscriptionRoleARN: arn:aws:iam::343315438995:role/poc-ack-conreollers-role
+  # topicRef:
+  #   name: poc-ack-test
   
