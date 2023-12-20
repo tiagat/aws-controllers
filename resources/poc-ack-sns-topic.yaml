@@ -8,3 +8,13 @@ spec:
   tags:
   - key: environment
     value: development
+---
+apiVersion: sns.services.k8s.aws/v1alpha1
+kind: Subscription
+metadata: 
+  name: poc-ack-test-subscription
+spec:
+  protocol: firehose
+  topicRef:
+    name: poc-ack-test
+    endpoint: arn:aws:firehose:us-east-1:343315438995:deliverystream/KDS-S3-HQDIM
