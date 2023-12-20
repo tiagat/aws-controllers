@@ -4,6 +4,9 @@ metadata:
   name: poc-ack-test
 spec:
   name: poc-ack-test
+  tags:
+  - key: environment
+    value: development
 ---
 apiVersion: v1
 kind: ConfigMap
