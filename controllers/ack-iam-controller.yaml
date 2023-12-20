@@ -14,6 +14,10 @@ spec:
     repoURL: public.ecr.aws/aws-controllers-k8s
     targetRevision: 1.3.0
     chart: iam-chart
+    helm:
+      parameters:
+        - name: aws.region
+          value: us-east-1
   syncPolicy:
     automated:
       prune: true
