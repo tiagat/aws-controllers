@@ -2,7 +2,7 @@ local environment = std.extVar('environment');
 local awsAccountId = std.extVar('awsAccountId');
 local awsRegion = std.extVar('awsRegion');
 
-local iamPolicyName = 'poc-ack--' + environment + '-policy';
+local iamPolicyName = 'poc-ack-' + environment + '-policy';
 
 local iamPolicyJson = std.toString({
   Version: '2012-10-17',
