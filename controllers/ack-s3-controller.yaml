@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: s3-controller
+  name: ack-s3-controller
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     namespace: ack-system
     name: in-cluster
   source:
-    repoURL: public.ecr.aws/aws-controllers-k8s/s3-chart
+    repoURL: public.ecr.aws/aws-controllers-k8s
     targetRevision: 1.0.6
     chart: s3-chart
   syncPolicy:

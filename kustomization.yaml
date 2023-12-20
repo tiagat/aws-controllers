@@ -1,2 +1,2 @@
 resources:
-  - controllers/s3-controller.yaml
+  - controllers/ack-s3-controller.yaml
