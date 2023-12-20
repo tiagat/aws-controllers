@@ -17,7 +17,4 @@ spec:
   protocol: firehose
   endpoint: arn:aws:firehose:us-east-1:343315438995:deliverystream/KDS-S3-HQDIM
   topicARN: arn:aws:sns:us-east-1:343315438995:poc-ack-test
-  subscriptionRoleARN: arn:aws:iam::343315438995:role/poc-ack-controllers-role
-  # topicRef:
-  #   name: poc-ack-test
-  
+  subscriptionRoleARN: arn:aws:iam::343315438995:role/poc-ack-role
