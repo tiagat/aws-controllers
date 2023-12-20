@@ -1,4 +1,5 @@
 resources:
+  
   # controllers
   - controllers/ack-iam-controller.yaml
   - controllers/ack-kinesis-controller.yaml
