@@ -1,5 +1,5 @@
 local environment = std.extVar('environment');
-local snsTopicName = 'topic-poc-ack-' + environment;
+local snsTopicName = 'poc-ack-' + environment + "-topic";
 
 {
     apiVersion: 'sns.services.k8s.aws/v1alpha1',

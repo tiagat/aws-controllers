@@ -8,7 +8,6 @@ local iamPolicyName = application + '-' + environment + '-policy';
 local iamRoleName = application + '-' + environment + '-role';
 
 
-// local snsTopicName = 'topic-' + application + '-' + environment;
 local snsTopic = import 'templates/sns-topic.libsonnet';
 
 local iamPolicyJson = std.toString({
@@ -49,24 +48,5 @@ local iamPolicy = {
 [
   iamPolicy,
   snsTopic
-
-//   {
-//     apiVersion: 'sns.services.k8s.aws/v1alpha1',
-//     kind: 'Topic',
-//     metadata: {
-//       name: snsTopicName,
-//     },
-//     spec: {
-//       name: snsTopicName,
-//       displayName: snsTopicName,
-//       tags: [
-//         {
-//           key: 'environment',
-//           value: environment,
-//         },
-//       ],
-//     },
-
-//   },
 
 ]
