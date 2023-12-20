@@ -17,7 +17,7 @@ local iamPolicy = {
     },
     spec: {
       name: iamPolicyName,
-      policyDocument: {
+      policyDocument: std.toString({
         Version: '2012-10-17',
         Statement: [
           {
@@ -38,7 +38,7 @@ local iamPolicy = {
             Resource: '*',
           },
         ],
-      },
+      }),
     },
   };
 
