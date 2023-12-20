@@ -14,7 +14,7 @@ spec:
                   "sns:Publish",
                   "sns:Subscribe"
               ],
-              "Resource": "arn:aws:sns:us-east-1:343315438995:poc-ack-test"
+              "Resource": "arn:aws:sns:us-east-1:343315438995:*"
           },
           {
               "Effect": "Allow",
