@@ -1,9 +1,9 @@
 apiVersion: iam.services.k8s.aws/v1alpha1
 kind: Policy
 metadata:
-  name: poc-acl-policy
+  name: poc-ack-policy
 spec:
-  name: poc-acl-policy
+  name: poc-ack-policy
   policyDocument: |
     {
       "Version": "2012-10-17",
