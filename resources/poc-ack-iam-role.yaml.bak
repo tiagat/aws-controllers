@@ -1,22 +1,53 @@
 apiVersion: iam.services.k8s.aws/v1alpha1
-kind: Role
+kind: Policy
 metadata:
-  name: poc-ack-test-role
+  name: poc-acl-policy
 spec:
-  name: poc-ack-test-role
-  tags:
-  - key: environment
-    value: development
-  assumeRolePolicyDocument: |
+  name: poc-acl-policy
+  policyDocument: |
     {
       "Version": "2012-10-17",
       "Statement": [
-        {
-            "Action": [
-                "firehose:*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "sns:Publish",
+                  "sns:Subscribe"
+              ],
+              "Resource": "arn:aws:sns:us-east-1:343315438995:poc-ack-test"
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "sns:ListTopics",
+                  "sns:Unsubscribe",
+                  "sns:ListSubscriptions"
+              ],
+              "Resource": "*"
+          }
       ]
     }
+
+
+# apiVersion: iam.services.k8s.aws/v1alpha1
+# kind: Role
+# metadata:
+#   name: poc-ack-test-role
+# spec:
+#   name: poc-ack-test-role
+#   tags:
+#   - key: environment
+#     value: development
+#   assumeRolePolicyDocument: |
+#     {
+#       "Version": "2012-10-17",
+#       "Statement": [
+#         {
+#             "Action": [
+#                 "firehose:*"
+#             ],
+#             "Effect": "Allow",
+#             "Resource": "*"
+#         }
+#       ]
+#     }
