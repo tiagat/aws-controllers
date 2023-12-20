@@ -1,0 +1,9 @@
+apiVersion: kinesis.services.k8s.aws/v1alpha1
+kind: Stream
+metadata:
+  name: poc-ack-test
+spec:
+  name: poc-ack-stream-test
+  shardCount: 1
+  streamModeDetails: 
+    streamMode: PROVISIONED
