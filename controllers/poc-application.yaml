@@ -21,6 +21,8 @@ spec:
             value: "343315438995"
           - name: awsRegion
             value: "us-east-1"
+          - name: awsFirehoseArn
+            value: "arn:aws:firehose:us-east-1:343315438995:deliverystream/KDS-S3-HQDIM"
           - name: environment
             value: test
   syncPolicy:
